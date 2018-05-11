@@ -318,7 +318,7 @@ struct ui_wrapper {
 struct draw_ui_wrapper {
   draw_ui_wrapper(bwgame::state& st, std::string mpq_path) {}
   std::tuple<int, int, uint32_t*> draw(int x, int y, int width, int height) {
-    return {0, 0, nullptr};
+    return std::make_tuple(0, 0, (uint32_t*)nullptr);
   }
 };
 
