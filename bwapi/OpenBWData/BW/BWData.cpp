@@ -2258,7 +2258,7 @@ void Unit::setHitPoints(int value)
   impl->game_setup_helper.input_action(w.data(), w.size());
 }
 
-int Unit::setShields(int value)
+void Unit::setShields(int value)
 {
   bwgame::sync_functions::dynamic_writer<> w;
   w.template put<uint8_t>(210);
@@ -2269,7 +2269,7 @@ int Unit::setShields(int value)
   impl->game_setup_helper.input_action(w.data(), w.size());
 }
 
-int Unit::setEnergy(int value)
+void Unit::setEnergy(int value)
 {
   bwgame::sync_functions::dynamic_writer<> w;
   w.template put<uint8_t>(210);
