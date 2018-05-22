@@ -414,8 +414,8 @@ struct Unit {
   int orderState() const;
 
   void setHitPoints(int value);
-  int setShields(int value);
-  int setEnergy(int value);
+  void setShields(int value);
+  void setEnergy(int value);
 };
 
 struct Bullet {
