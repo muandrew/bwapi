@@ -604,6 +604,14 @@ struct game_setup_helper_t {
           fd_read = std::atoi(fd_read_str.c_str());
           fd_write = std::atoi(fd_write_str.c_str());
         } else {
+          // The files provided here are presumably named pipes; ignore SIGPIPE
+          // in this case so that each process can exit gracefully at the end of
+          // the game
+          struct sigaction sa;
+          memset(&sa, 0, sizeof(sa));
+          sa.sa_handler = SIG_IGN;
+          sigaction(SIGPIPE, &sa, NULL);
+
           std::string file_read = env("OPENBW_FILE_READ", "");
           std::string file_write = env("OPENBW_FILE_WRITE", "");
           if (file_read.empty()) error("OPENBW_LAN_MODE is FILE but OPENBW_FILE_READ not specified");
