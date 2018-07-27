@@ -30,6 +30,7 @@ Release_Binary/Shared
 Release_Binary/MPQdraft/BWAPI_*
 Release_Binary/Starcraft/SNP_DirectIP.snp
 Release_Binary/Starcraft/bwapi-data/BWAPI*.dll
+build/
 bwapi/libReplayToolTest/TestData/Replay_Tool_Actual.exe
 bwapi/ipch/
 Release_Binary/Chaoslauncher/__log.txt
